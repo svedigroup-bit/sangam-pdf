@@ -1,0 +1,5 @@
+# Robots.txt for Work of Wind: Landforms
+User-agent: *
+Allow: /
+
+Sitemap: https://ais-dev-jhqckjaqooa4wyo3p2y46d-236031653704.asia-southeast1.run.app/sitemap.xml

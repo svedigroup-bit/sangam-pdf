@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Newsreader', 'Fraunces', Georgia, serif;
+  --font-display: 'Newsreader', 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  
+  --color-parchment: #F8F5EE;
+  --color-sandstone-50: #FAF8F3;
+  --color-sandstone-100: #F3EFE7;
+  --color-sandstone-200: #EAE3D6;
+  --color-sandstone-300: #DCD2C1;
+  --color-sandstone-400: #C7B9A3;
+  
+  --color-terracotta: #A44A29;
+  --color-terracotta-dark: #8E3D20;
+  --color-ochre: #9A6538;
+  --color-dusty-blue: #365D73;
+  
+  --color-earth-900: #1B1715;
+  --color-earth-800: #2C2622;
+  --color-earth-700: #443B34;
+  --color-earth-600: #62564C;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8F5EE;
+  color: #221D1A;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-serif, .font-display {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+/* Subtle archival paper grain feel */
+.bg-parchment {
+  background-color: #F8F5EE;
+}
+
+.bg-sandstone-card {
+  background-color: #FFFFFF;
+}
+
+/* Custom editorial scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F3EFE7;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEBD;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A44A29;
+}
+
+/* =======================================================
+   PREMIUM MOTION DESIGN SYSTEM
+   ======================================================= */
+
+/* Subtle ambient photograph breathing (8-12s loop) */
+@keyframes ambientBreathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-ambient-breathe {
+  animation: ambientBreathe 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Wind streamline flow for SVG diagrams */
+@keyframes windFlow {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-wind-flow {
+  animation: windFlow 2.4s linear infinite;
+}
+
+@keyframes windFlowFast {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-wind-flow-fast {
+  animation: windFlowFast 1.4s linear infinite;
+}
+
+/* Subtle arrow drift for directional indicators */
+@keyframes arrowDrift {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+}
+
+.animate-arrow-drift {
+  animation: arrowDrift 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Saltation hop animation for 2-3 ft blast zone */
+@keyframes saltationBounce {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(25px, -18px);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(50px, 0);
+    opacity: 0;
+  }
+}
+
+.animate-saltation-1 {
+  animation: saltationBounce 1.8s cubic-bezier(0.2, 0.8, 0.3, 1) infinite;
+}
+
+.animate-saltation-2 {
+  animation: saltationBounce 2.1s cubic-bezier(0.2, 0.8, 0.3, 1) 0.5s infinite;
+}
+
+.animate-saltation-3 {
+  animation: saltationBounce 1.6s cubic-bezier(0.2, 0.8, 0.3, 1) 0.9s infinite;
+}
+
+/* Editorial Underline Grow */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #A44A29;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Section divider reveal */
+.divider-line {
+  transform-origin: left;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-ambient-breathe,
+  .animate-wind-flow,
+  .animate-wind-flow-fast,
+  .animate-arrow-drift,
+  .animate-saltation-1,
+  .animate-saltation-2,
+  .animate-saltation-3 {
+    animation: none !important;
+  }
+}
+

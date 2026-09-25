@@ -1,0 +1,6 @@
+{
+  "name": "Work of Wind: Landforms | Class 11th Geography",
+  "description": "Interactive educational platform for Class 11 Geography on the erosional and depositional work of wind in arid regions, featuring dynamic simulations, detailed diagrams, case studies, and revision tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
